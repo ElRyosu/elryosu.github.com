@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoreHub - Crea tu tienda virtual</title>
+    <script src="https://cdn.tailwindcss.com">document.getElementById('heroBuyer')?.addEventListener('click', () => {
+  
+  window.location.href = 'RegistroUsuario.html';
+});
+
+document.getElementById('heroSeller')?.addEventListener('click', () => {
+  
+  window.location.href = 'RegistroUsuario.html';
+});
+</script>
+    <style>
+        #registrationModal, #loginModal, #sellerRegistrationModal {
+            transition: opacity 0.3s ease;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .store-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Login Modal -->
+    <div id="loginModal" class="hidden fixed z-50 inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-purple-800">Iniciar Sesión</h3>
+                <button id="closeLoginModal" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div class="flex items-center p-4 bg-purple-50 rounded-lg cursor-pointer hover:bg-purple-100 transition" id="loginBuyerBtn">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Iniciar como Comprador</h4>
+                        <p class="text-sm text-gray-600">Accede a tu cuenta de comprador</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-purple-50 rounded-lg cursor-pointer hover:bg-purple-100 transition" id="loginSellerBtn">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Iniciar como Vendedor</h4>
+                        <p class="text-sm text-gray-600">Accede a tu panel de vendedor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seller Registration Modal -->
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="hidden fixed z-50 inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-purple-800">Crear Cuenta</h3>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div class="flex items-center p-4 bg-purple-50 rounded-lg cursor-pointer hover:bg-purple-100 transition" id="buyerBtn">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Registrarse como Comprador</h4>
+                        <p class="text-sm text-gray-600">Crea tu cuenta para hacer compras</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-purple-50 rounded-lg cursor-pointer hover:bg-purple-100 transition" id="sellerBtn">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Registrarse como Vendedor</h4>
+                        <p class="text-sm text-gray-600">Crea tu tienda y empieza a vender</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c35bb30c-bd2e-4cb4-82ca-4ad672eaadbc.png" alt="Logo de StoreHub con icono de tienda y burbujas de chat en tonos morados" class="h-10">
+                <span class="text-xl font-bold text-purple-800">StoreHub</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="font-medium hover:text-purple-600">Inicio</a>
+                <a href="#comprar" class="font-medium hover:text-purple-600">Comprar</a>
+                <a href="#vender" class="font-medium hover:text-purple-600">Vender</a>
+                <a href="#recursos" class="font-medium hover:text-purple-600">Recursos</a>
+                <a href="#contacto" class="font-medium hover:text-purple-600">Contacto</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button id="loginBtn" class="px-4 py-2 rounded-md font-medium hover:bg-gray-100">Iniciar sesión</button>
+                <button id="registerBtn" class="px-4 py-2 bg-purple-600 text-white rounded-md font-medium hover:bg-purple-700">Registrarse</button>
+            </div>
+            <button class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Tu mercado digital para comprar y vender</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Compre productos únicos o venda los suyos - todo en una plataforma simple y poderosa.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button id="heroBuyer" class="px-8 py-3 bg-white text-purple-800 rounded-md font-bold hover:bg-gray-100 transition">Soy Comprador</button>
+                <button id="heroSeller" class="px-8 py-3 bg-purple-700 text-white rounded-md font-bold hover:bg-purple-800 transition">Soy Vendedor</button>
+            </div>
+            <div class="mt-16 mx-auto max-w-5xl">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/309cae73-8024-4449-80bf-7d35bf32f1f7.png" alt="Dashboard de ejemplo mostrando múltiples tiendas virtuales con diferentes diseños y categorías de productos" class="rounded-lg shadow-2xl border border-gray-200">
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Cómo funciona para vendedores</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Si eres comprador, encuentra productos increíbles con solo buscar y pagar de forma segura.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">1. Configura tu tienda</h3>
+                    <p class="text-gray-600">Elige un nombre, dominio y diseño para tu tienda. Personaliza colores, logos y más en minutos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">2. Añade productos/servicios</h3>
+                    <p class="text-gray-600">Sube fotos, descripciones y precios. Configura inventario, variantes y métodos de entrega.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">3. Empieza a vender</h3>
+                    <p class="text-gray-600">Comparte tu tienda y recibe pagos seguros. Gestiona pedidos y atiende clientes fácilmente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Stores -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-6">Descubre tiendas populares</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Inspírate con ejemplos de tiendas exitosas creadas en nuestra plataforma.</p>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Store 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md store-card transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f098c7ab-3be0-4140-840f-15c1e4f08796.png" alt="Tienda de ropa vintage con maniquíes mostrando prendas coloridas en un estudio bien iluminado" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <span class="absolute bottom-4 left-4 text-white font-bold text-lg">Moda Vintage</span>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center mb-3">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b3c356ea-e095-4a0a-96c1-636cccdab848.png" alt="Logo circular de la tienda Moda Vintage con tipografía retro" class="w-8 h-8 rounded-full mr-2">
+                            <span class="font-medium text-sm">por María Gómez</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Ropa única seleccionada cuidadosamente, con envios a toda Latinoamérica.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-purple-600 font-medium">200+ ventas</span>
+                            <span class="text-gray-500">★ 4.9 (128)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Store 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md store-card transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f1fa47e1-eb78-4d90-9e28-9e2b6e2495c9.png" alt="Escritorio creativo con tablet digitalizadora y mouse ergonómico para diseñadores" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <span class="absolute bottom-4 left-4 text-white font-bold text-lg">Diseño Digital</span>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center mb-3">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cf043896-d03c-4748-8e80-64e3fb764462.png" alt="Avatar del diseñador digital con fondo naranja y elementos gráficos abstractos" class="w-8 h-8 rounded-full mr-2">
+                            <span class="font-medium text-sm">por Carlos Ruiz</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Servicios profesionales de diseño gráfico, branding y ilustración digital.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-purple-600 font-medium">150+ proyectos</span>
+                            <span class="text-gray-500">★ 5.0 (97)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Store 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md store-card transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ef13eb7f-8cf5-490c-a5f0-c5cb37940fba.png" alt="Set completo de productos de belleza orgánicos con hojas verdes y embalaje ecológico" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <span class="absolute bottom-4 left-4 text-white font-bold text-lg">Belleza Orgánica</span>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center mb-3">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9f0f6afb-56b8-43f1-b074-0e2fe43a3d13.png" alt="Logo de Belleza Orgánica con hoja verde y tipografía elegante" class="w-8 h-8 rounded-full mr-2">
+                            <span class="font-medium text-sm">por Ana Torres</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Productos naturales para el cuidado de la piel y cabello, hechos a mano.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-purple-600 font-medium">350+ ventas</span>
+                            <span class="text-gray-500">★ 4.8 (215)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="px-6 py-2 border border-purple-600 text-purple-600 rounded-md font-medium hover:bg-purple-50 transition"><a href="MiTienda.html" class="block w-full h-full text-purple-600">Ver más tiendas</a></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Types -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-6">Encuentra o vende lo que quieras</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Desde productos físicos hasta servicios digitales - encuentra todo lo que necesites o inicia tu negocio.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product -->
+                <div class="bg-white p-6 rounded-lg shadow-sm service-card hover:shadow-md">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-2">Productos físicos</h3>
+                    <p class="text-gray-600 text-sm">Ropa, artículos para el hogar, artesanías, tecnología y más.</p>
+                </div>
+                
+                <!-- Digital -->
+                <div class="bg-white p-6 rounded-lg shadow-sm service-card hover:shadow-md">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-2">Productos digitales</h3>
+                    <p class="text-gray-600 text-sm">Ebooks, cursos, plantillas, software, música y arte digital.</p>
+                </div>
+                
+                <!-- Services -->
+                <div class="bg-white p-6 rounded-lg shadow-sm service-card hover:shadow-md">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-2">Servicios</h3>
+                    <p class="text-gray-600 text-sm">Diseño, programación, consultoría, traducción y más servicios profesionales.</p>
+                </div>
+                
+                <!-- Memberships -->
+                <div class="bg-white p-6 rounded-lg shadow-sm service-card hover:shadow-md">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-2">Suscripciones</h3>
+                    <p class="text-gray-600 text-sm">Vende acceso recurrente a contenido exclusivo, cajas sorpresa y más.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-6">¿Listo para comprar o vender?</h2>
+                <p class="text-xl mb-8">Regístrate hoy como comprador o vendedor para disfrutar de la mejor experiencia de comercio digital.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="px-8 py-3 bg-white text-purple-800 rounded-md font-bold hover:bg-gray-100 transition mr-4"><a href="RegistroUsuario.html" class="block w-full h-full">Registrarse como Comprador</a></button>
+                    <button class="px-8 py-3 bg-purple-700 text-white rounded-md font-bold hover:bg-purple-800 transition"><a href="RegistroUsuario.html" class="block w-full h-full">Empezar a Vender</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">StoreHub</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/acerca" class="text-gray-400 hover:text-white">Acerca de</a></li>
+                        <li><a href="/carreras" class="text-gray-400 hover:text-white">Carreras</a></li>
+                        <li><a href="/blog" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="/prensa" class="text-gray-400 hover:text-white">Prensa</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Para vendedores</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/como-funciona" class="text-gray-400 hover:text-white">Cómo funciona</a></li>
+                        <li><a href="/precios" class="text-gray-400 hover:text-white">Precios</a></li>
+                        <li><a href="/recursos" class="text-gray-400 hover:text-white">Recursos</a></li>
+                        <li><a href="/ayuda" class="text-gray-400 hover:text-white">Centro de ayuda</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/terminos" class="text-gray-400 hover:text-white">Términos</a></li>
+                        <li><a href="/privacidad" class="text-gray-400 hover:text-white">Privacidad</a></li>
+                        <li><a href="/cookies" class="text-gray-400 hover:text-white">Cookies</a></li>
+                        <li><a href="/licencias" class="text-gray-400 hover:text-white">Licencias</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Contáctanos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            soporte@storehub.com
+                        </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            +51 995 005 003
+                        </a></li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 202 StoreHub. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+            const nav = document.querySelector('nav.hidden');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-16');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('right-0');
+            nav.classList.toggle('bg-white');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('shadow-md');
+        });
+
+        // Simple animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.service-card, .store-card');
+            
+            elements.forEach(el => {
+                const elPosition = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if(elPosition < screenPosition) {
+                    el.style.opacity = 1;
+                }
+            });
+        }
+
+        // Set initial state
+        document.querySelectorAll('.service-card, .store-card').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transition = 'opacity 0.5s ease';
+        });
+
+        // Run on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Registration modal functionality
+        const modal = document.getElementById('registrationModal');
+        const registerBtn = document.getElementById('registerBtn');
+        const closeModal = document.getElementById('closeModal');
+        const buyerBtn = document.getElementById('buyerBtn');
+        const sellerBtn = document.getElementById('sellerBtn');
+
+        registerBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        buyerBtn.addEventListener('click', () => {
+            alert('Redirigiendo a registro de Comprador');
+            modal.classList.add('hidden');
+        });
+
+        sellerBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    window.location.href = 'RegistroUsuario.html';
+    localStorage.setItem('redirectTo', 'MiTienda.html');
+});
+
+        // Close seller registration modal
+        document.getElementById('closeSellerModal').addEventListener('click', () => {
+            document.getElementById('sellerRegistrationModal').classList.add('hidden');
+        });
+
+        // Login modal functionality
+        const loginModal = document.getElementById('loginModal');
+        const loginBtn = document.getElementById('loginBtn');
+        const closeLoginModal = document.getElementById('closeLoginModal');
+        const loginBuyerBtn = document.getElementById('loginBuyerBtn');
+        const loginSellerBtn = document.getElementById('loginSellerBtn');
+
+        loginBtn.addEventListener('click', () => {
+            loginModal.classList.remove('hidden');
+        });
+
+        closeLoginModal.addEventListener('click', () => {
+            loginModal.classList.add('hidden');
+        });
+
+        loginBuyerBtn.addEventListener('click', () => {
+    window.location.href = 'IniciodeSesion.html';
+});
+
+        loginSellerBtn.addEventListener('click', () => {
+    window.location.href = 'IniciodeSesion.html';
+});
+    </script>
+<script>
+// Almacenar cambios de tienda desde StoreHub (opcional si lo deseas global)
+function guardarDatosGlobal(nombre, portada) {
+  const tienda = JSON.parse(localStorage.getItem('tienda')) || {};
+  if (nombre) tienda.nombre = nombre;
+  if (portada) tienda.portada = portada;
+  localStorage.setItem('tienda', JSON.stringify(tienda));
+}
+</script>
+</body>
+</html>
