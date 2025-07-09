@@ -121,7 +121,7 @@ firebase.database().ref('usuariosVendedores')
     ref.set(nuevoUsuario)
       .then(() => {
         const uid = ref.key;
-        window.location.href = `MiTienda.html?uid=${uid}`;
+        <a href="MiTienda (1).html">Contacto</a>;
       })
       .catch(err => alert('Error al guardar: ' + err.message));
   });
